@@ -127,7 +127,7 @@ class OfficeConverter
         $oriFile = escapeshellarg($this->file);
         $outputDirectory = escapeshellarg($outputDirectory);
 
-        return "{$this->bin} --headless --convert-to {$outputExtension} {$oriFile} --outdir {$outputDirectory}";
+        return "timeout 60s -k {$this->bin} --headless --convert-to {$outputExtension} {$oriFile} --outdir {$outputDirectory}";
     }
 
     /**
